@@ -33,7 +33,6 @@ title: 知乎内容
     <div class="container mt-5">
     <h1>实时更新内容</h1>
     <div id="content">加载中...</div>
-  </div>
 
   <script>
     async function fetchContent() {
@@ -56,7 +55,6 @@ title: 知乎内容
     <div class="container mt-5">
     <h1>实时更新内容</h1>
     <div id="content">加载中...</div>
-  </div>
 
   <script>
     async function fetchRSS() {
