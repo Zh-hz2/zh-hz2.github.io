@@ -30,9 +30,10 @@ title: 知乎内容
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div class="container mt-5">
-    <h1>实时更新内容</h1>
-    <div id="content">加载中...</div>
+  <div class="container mt-5">
+    <h1>实时更新的内容</h1>
+    <p id="dynamic-content">加载中...</p>
+  </div>
 
   <script>
     async function fetchContent() {
@@ -52,9 +53,10 @@ title: 知乎内容
     setInterval(fetchContent, 60000); // 每分钟刷新一次
   </script>
 
-    <div class="container mt-5">
-    <h1>实时更新内容</h1>
-    <div id="content">加载中...</div>
+  <div class="container mt-5">
+    <h1>实时更新的内容</h1>
+    <p id="dynamic-content">加载中...</p>
+  </div>
 
   <script>
     async function fetchRSS() {
