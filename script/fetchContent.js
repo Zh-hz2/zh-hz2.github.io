@@ -2,7 +2,7 @@
 // 1. fetch my zhihu 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    fetch('https://api.zhihu.com/articles/12345678')
+    fetch('https://zhuanlan.zhihu.com/p/687753209')
       .then(response => response.json())
       .then(data => {
         document.getElementById('content').innerHTML = data.content;
