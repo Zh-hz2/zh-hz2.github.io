@@ -1,21 +1,33 @@
 ---
 layout: default
-title: 首页
+title: 热门文章
 ---
 
-# 欢迎来到我的博客
+# 热门文章
 
-这是我的博客主页。点击上方的链接来浏览不同的页面。
+很想给你写封信,告诉你这里的天气.  
+昨夜的那场电影,还有我的心情.
 
+## 文章1
 
+![标题](/path/to/your/image.jpg)
 
-<div class="container">
-  <h1 class="mt-4">博客文章列表</h1>
-  <ul class="list-group">
-    {% for post in site.posts %}
-      <li class="list-group-item">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+
+[阅读更多](#) {: .btn .btn-primary}
+
+## 文章2
+
+![标题](/path/to/your/image.jpg)
+
+很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+
+[阅读更多](#) {: .btn .btn-primary}
+
+## 文章3
+
+![标题](/path/to/your/image.jpg)
+
+很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+
+[阅读更多](#) {: .btn .btn-primary}
