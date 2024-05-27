@@ -53,6 +53,35 @@ title: 知乎内容
     setInterval(fetchContent, 60000); // 每分钟刷新一次
   </script>
 
+    <div class="container mt-5">
+    <h1>实时更新内容</h1>
+    <div id="content">加载中...</div>
+  </div>
+
+  <script>
+    async function fetchRSS() {
+      try {
+        const response = await fetch('https://zhuanlan.zhihu.com/rss');
+        const data = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'application/xml');
+        const items = doc.querySelectorAll('item');
+        let content = '';
+        items.forEach(item => {
+          const title = item.querySelector('title').textContent;
+          const description = item.querySelector('description').textContent;
+          content += `<h2>${title}</h2><p>${description}</p>`;
+        });
+        document.getElementById('content').innerHTML = content;
+      } catch (error) {
+        document.getElementById('content').innerText = '无法获取内容';
+      }
+    }
+
+    fetchRSS();
+    setInterval(fetchRSS, 60000); // 每分钟刷新一次
+  </script>
+
 
   
 
