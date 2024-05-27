@@ -5,39 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} - {{ site.title }}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    .sidebar {
+      width: 250px;
+    }
+    .footer {
+      background: #f8f9fa;
+      padding: 10px 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">{{ site.title }}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mr.Yss</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ "/" | relative_url }}">首页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ "/blog" | relative_url }}">博客</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ "/about" | relative_url }}">关于</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ "/" | relative_url }}">
+              首页
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ "/about" | relative_url }}">About</a>
+            <a class="nav-link" href="{{ "/blog" | relative_url }}">
+              博客
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ "/blog" | relative_url }}">Blog</a>
+            <a class="nav-link" href="{{ "/message" | relative_url }}">
+              留言
+            </a>
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container mt-4">
-    {{ content }}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+      {{ content }}
+    </main>
   </div>
+</div>
 
-  <footer class="bg-light text-center py-3">
-    <p>&copy; 2024 Zh-hz2</p>
-  </footer>
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 我的精致博客</p>
+  </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ "/scripts/fetchContent.js" | relative_url }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
