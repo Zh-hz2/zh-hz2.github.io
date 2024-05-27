@@ -30,9 +30,30 @@ title: 知乎内容
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <div class="container mt-5">
+    <h1>实时更新内容</h1>
+    <div id="content">加载中...</div>
+  </div>
 
-<div class="container">
-  <h1 class="mt-4">{{ page.title }}</h1>
+  <script>
+    async function fetchContent() {
+      try {
+        const response = await fetch('http://localhost:3000/fetch-zhihu');
+        const data = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const content = doc.querySelector('#root > div > main > div > article > div:nth-child(1) > div > div > div').innerText;
+        document.getElementById('content').innerText = content;
+      } catch (error) {
+        document.getElementById('content').innerText = '无法获取内容';
+      }
+    }
+
+    fetchContent();
+    setInterval(fetchContent, 60000); // 每分钟刷新一次
+  </script>
+
+
   
 
 
