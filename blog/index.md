@@ -14,7 +14,7 @@ title: 热门文章
 
 很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
 
-[阅读更多](#post1) {: .btn .btn-primary}
+[阅读更多](post1.md) {: .btn .btn-primary}
 
 ## 文章2
 
@@ -22,7 +22,7 @@ title: 热门文章
 
 很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
 
-[阅读更多](#post2) {: .btn .btn-primary}
+[阅读更多](post2.md) {: .btn .btn-primary}
 
 ## 文章3
 
@@ -30,4 +30,4 @@ title: 热门文章
 
 很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
 
-[阅读更多](#post3) {: .btn .btn-primary}
+[阅读更多](post3.md) {: .btn .btn-primary}
