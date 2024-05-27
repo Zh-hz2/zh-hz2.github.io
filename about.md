@@ -3,7 +3,8 @@ layout: default
 title: 关于
 ---
 
-<div class="container">
-  <h1 class="mt-4">关于我</h1>
-  <p>这是关于我页面的内容。</p>
-</div>
+#Zh_hz2
+  
+[Enter Blog](#blog) {: .btn .btn-primary .btn-lg}
+
+![Next Section](/path/to/arrow_down_icon.png){: .next-section}
