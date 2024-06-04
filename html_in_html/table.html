@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Products</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <h4>Filter by Category</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Tops</a></li>
+                <li class="list-group-item"><a href="#">Pants</a></li>
+                <li class="list-group-item"><a href="#">Accessories</a></li>
+                <li class="list-group-item"><a href="#">Shoes</a></li>
+            </ul>
+            <h4>Filter by Price</h4>
+            <input type="range" class="form-control-range" id="priceRange">
+            <p>Price: <span id="priceValue">0</span></p>
+        </div>
+        <div class="col-md-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>Tops</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>Pants</td>
+                        <td>$20</td>
+                    </tr>
+                    <tr>
+                        <td>Product 3</td>
+                        <td>Accessories</td>
+                        <td>$5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('priceRange').addEventListener('input', function () {
+        document.getElementById('priceValue').textContent = this.value;
+    });
+</script>
