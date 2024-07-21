@@ -1,33 +1,18 @@
 ---
 layout: default
-title: 首页
 ---
 
-# Zh_hz2
-  
-# 欢迎来到我的博客
+<h2>Welcome to My Blog</h2>
+<p>This is the home of my personal blog where I share insights, tutorials, and more.</p>
 
-这是我的博客主页。点击上方的链接来浏览不同的页面。
-
-<nav class="nav flex-column">
-  <a class="nav-link active" href="#section1">section1</a>
-  <a class="nav-link" href="#section2">section2</a>
-  <a class="nav-link" href="#section3">section3</a>
-</nav>
-
-## 目录
-- [关于](about.md)
-- [跳到部分1](#section1)
-- [跳到部分2](#section2)
-
-<a name="section1"></a>
-
-# 部分1
-
-这是一段内容，属于部分1。
-
-<a name="section2"></a>
-
-# 部分2
-
-这是一段内容，属于部分2。
+<h3>Categories</h3>
+<ul>
+  <li><a href="{{ '/category1' | relative_url }}">Category 1</a></li>
+  <li><a href="{{ '/category2' | relative_url }}">Category 2</a></li>
+  <li><a href="{{ '/category3' | relative_url }}">Category 3</a></li>
+  <li><a href="{{ '/category4' | relative_url }}">Category 4</a></li>
+  <li><a href="{{ '/category5' | relative_url }}">Category 5</a></li>
+  <li><a href="{{ '/category6' | relative_url }}">Category 6</a></li>
+  <li><a href="{{ '/category7' | relative_url }}">Category 7</a></li>
+  <li><a href="{{ '/category8' | relative_url }}">Category 8</a></li>
+</ul>
