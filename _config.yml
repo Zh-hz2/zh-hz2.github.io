@@ -1,10 +1,28 @@
-title: "Your Blog Title"
-description: "A blog about something"
+title: My Blog
 baseurl: ""
 url: "https://yourusername.github.io"
-theme: minima
 
-# Plugins
+theme: minimal
+
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives
+
+paginate: 5
+paginate_path: "/page:num/"
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+    - months
+  layouts:
+    category: archive
+    tag: archive
+    year: archive
+    month: archive
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+    year: /:year/
+    month: /:year/:month/
