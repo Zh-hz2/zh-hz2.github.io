@@ -1,2 +1,0 @@
-// scripts/fetchContent.js --- failed
-// 
