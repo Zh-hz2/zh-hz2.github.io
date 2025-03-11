@@ -1,0 +1,38 @@
+<script type="module">
+  // 🔹 1️⃣ 导入 Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+
+  // 🔹 2️⃣ 配置 Firebase
+  const firebaseConfig = {
+      apiKey: "你的 Firebase API Key",
+      authDomain: "yourproject.firebaseapp.com",
+      projectId: "yourproject-id",
+      storageBucket: "yourproject.appspot.com",
+      messagingSenderId: "your_sender_id",
+      appId: "your_app_id"
+  };
+
+  // 🔹 3️⃣ 初始化 Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // 🔹 4️⃣ 读取 Firestore 里的博客文章
+  async function fetchPosts() {
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      let postsContainer = document.getElementById("posts-list");
+      
+      querySnapshot.forEach(doc => {
+          let post = doc.data();
+          let postElement = document.createElement("li");
+          postElement.innerHTML = `<a href="${post.url}">${post.title}</a> - ${post.date}`;
+          postsContainer.appendChild(postElement);
+      });
+  }
+
+  // 🔹 5️⃣ 运行获取数据的函数
+  fetchPosts();
+</script>
+
+<!-- 🔹 6️⃣ 页面里显示博客列表 -->
+<ul id="posts-list"></ul>
