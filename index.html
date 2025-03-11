@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+
+      async function fetchPosts() {
+          const response = await fetch("assets/js/firebase-config.json");
+          const firebaseConfig = await response.json();
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore(app);
+          
+          const querySnapshot = await getDocs(collection(db, "posts"));
+          let postsContainer = document.getElementById("posts-list");
+
+          querySnapshot.forEach(doc => {
+              let post = doc.data();
+              let postElement = document.createElement("li");
+              postElement.innerHTML = `<a href="${post.url}">${post.title}</a> - ${post.date}`;
+              postsContainer.appendChild(postElement);
+          });
+      }
+
+      fetchPosts();
+    </script>
+</head>
+<body>
+    <h1>📢 Latest Blog Posts</h1>
+    <ul id="posts-list"></ul>
+</body>
+</html>
