@@ -1,8 +1,9 @@
 {
-    "apiKey": "YOUR_FIREBASE_API_KEY",
-    "authDomain": "yourproject.firebaseapp.com",
-    "projectId": "yourproject-id",
-    "storageBucket": "yourproject.appspot.com",
-    "messagingSenderId": "your_sender_id",
-    "appId": "your_app_id"
+  apiKey: "AIzaSyAdea8hPBqvhEb4QLTR6nkpJmx812GUHbc",
+  authDomain: "hzwithu.firebaseapp.com",
+  projectId: "hzwithu",
+  storageBucket: "hzwithu.firebasestorage.app",
+  messagingSenderId: "672550531210",
+  appId: "1:672550531210:web:f1007bf3812de1940dfd73",
+  measurementId: "G-Z63EBR26FR"
 }
